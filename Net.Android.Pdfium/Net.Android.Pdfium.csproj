@@ -8,8 +8,8 @@
     <IsTrimmable>true</IsTrimmable>
     <RootNamespace>Net.Android.Pdfium</RootNamespace>
     <AssemblyName>Net.Android.Pdfium</AssemblyName>
-    <AssemblyVersion>1.0.0.0</AssemblyVersion>
-    <FileVersion>1.0.0.0</FileVersion>
+    <AssemblyVersion>1.0.1.0</AssemblyVersion>
+    <FileVersion>1.0.1.0</FileVersion>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -26,7 +26,7 @@
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <PackageVersion>1.0.0.0</PackageVersion>
+    <PackageVersion>1.0.1.0</PackageVersion>
     <NeutralLanguage>en-US</NeutralLanguage>
     <PackageTags>pdf; pdfium; pdfiumandroid</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -49,6 +49,7 @@
 
   <ItemGroup>
     <AndroidMavenLibrary Include="io.legere:pdfiumandroid" Version="1.0.32" />
+    <AndroidNamespaceReplacement Include='io.legere.pdfiumandroidkt' Replacement='Net.Android.Pdfium' />
   </ItemGroup>
 
   <ItemGroup>
