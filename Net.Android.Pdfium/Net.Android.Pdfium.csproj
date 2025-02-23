@@ -1,0 +1,61 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  
+  <PropertyGroup>
+    <TargetFramework>net9.0-android</TargetFramework>
+    <SupportedOSPlatformVersion>21</SupportedOSPlatformVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <IsTrimmable>true</IsTrimmable>
+    <RootNamespace>Net.Android.Pdfium</RootNamespace>
+    <AssemblyName>Net.Android.Pdfium</AssemblyName>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageId>Net.Android.Pdfium</PackageId>
+    <Title>Pdfium for .NET for Android</Title>
+    <Summary>.NET for Android bindings for PdfiumAndroidKt Library</Summary>
+    <Description>.NET for Android bindings for PdfiumAndroidKt Library</Description>
+    <Authors>Oleksii Burianov</Authors>
+    <Owners>Oleksii Burianov</Owners>
+    <Copyright>© Oleksii Burianov.</Copyright>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageProjectUrl>https://github.com/AlexeyBuryanov/Net.Android.Pdfium</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/AlexeyBuryanov/Net.Android.Pdfium</RepositoryUrl>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageVersion>1.0.0.0</PackageVersion>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <PackageTags>pdf; pdfium; pdfiumandroid</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="icon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <AndroidMavenLibrary Include="io.legere:pdfiumandroid" Version="1.0.32" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.AndroidX.Annotation" Version="1.9.1.2" />
+    <PackageReference Include="Xamarin.AndroidX.Annotation.Jvm" Version="1.9.1.2" />
+    <PackageReference Include="Xamarin.Kotlin.StdLib" Version="2.0.21.2" />
+    <PackageReference Include="Xamarin.KotlinX.Coroutines.Android" Version="1.9.0.2" />
+  </ItemGroup>
+
+</Project>
