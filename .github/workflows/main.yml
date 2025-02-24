@@ -1,0 +1,31 @@
+name: Pack .NET Android App
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up .NET 9
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: '9.x'
+          
+      - name: Pack
+        run: dotnet pack --configuration Release --output ${{ github.workspace }}/packages
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: packed-app
+          path: ${{ github.workspace }}/packages
