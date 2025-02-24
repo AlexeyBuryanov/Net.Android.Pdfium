@@ -39,4 +39,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: packed-app
-          path: ${{ github.workspace }}/packages
+          path: ${{ github.workspace }}/Net.Android.Pdfium/Net.Android.Pdfium/bin/Release
