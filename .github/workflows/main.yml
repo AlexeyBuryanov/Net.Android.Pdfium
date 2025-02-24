@@ -25,7 +25,7 @@ jobs:
         run: dotnet pack --configuration Release --output ${{ github.workspace }}/packages
 
       - name: Upload artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: packed-app
           path: ${{ github.workspace }}/packages
