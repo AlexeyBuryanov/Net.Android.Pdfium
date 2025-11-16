@@ -1,0 +1,42 @@
+name: Pack .NET Android App
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up .NET 9
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: '9.x'
+
+      - name: Install .NET Android workloads
+        run: |
+          dotnet nuget locals all --clear
+          dotnet workload install maui-android
+
+      - name: Restore
+        run: dotnet restore ${{ github.workspace }}/Net.Android.Pdfium/Net.Android.Pdfium.csproj
+
+      - name: Build
+        run: dotnet build ${{ github.workspace }}/Net.Android.Pdfium/Net.Android.Pdfium.csproj --configuration Release --no-restore
+
+      - name: Pack
+        run: dotnet pack ${{ github.workspace }}/Net.Android.Pdfium/Net.Android.Pdfium.csproj --configuration Release --output ${{ github.workspace }}/packages
+        
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: packed-app
+          path: ${{ github.workspace }}/packages
